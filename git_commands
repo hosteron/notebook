@@ -1,0 +1,44 @@
+配置git:git config --global user.name "your name"
+        git config --global user.email "email@example.com"
+创建仓库: git init
+添加: git add
+提交: git commit -m "message"
+看日志: git log
+回退到上个版本: git reset --hard HEAD^, 上上个版本git reset --hard HEAD^^
+调整到指定版本: git reset --hard commit id
+参看git命令: git reflog
+参看当前工作区的状态: git status
+工作区和版本库中的区别: git diff HEAD -- readme.txt
+撤销工作区的修改：git checkout -- filename
+撤销暂存区的修改: git reset HEAD file
+删除文件: git rm file
+ssh:ssh-keygen -t rsa -C "youremail@example.com"
+将本地得仓库关联到远程仓库中: git remote add origin git@github.com:hosteron/learngit.git
+                            git remote add origin https://github.com/hosteron/learngit.git // 需要账号密码
+推送本地仓库到远程: git push -u origin master(第一次加上参数-u), 后续添加只要git push origin master
+从远程仓库克隆一个:git clone git@github.com:hosteron/learngit.git
+参看分支:git branch
+创建分支:git branch <name>
+切换分支：git checkout <name>
+创建+切换分支:git checkout -b <name>
+合并分支:git merge <name>,把指定分支合并到当前分支中,fast-forward
+删除分支：git branch -d <name>
+参看分支合并图:git log --graph
+强制禁用fast-forward模式的话:git merge --no-ff -m "merge with on fast forward" <name>
+存储现场：git stash
+参看之前保存的工作现场: git stash list
+恢复工作现场:git stash apply,stash 的内容并没有删除，你需要git stash drop来删除；git stash pop,在恢复的同时，把stash的内容删除了
+在一个分支修改后，没有合并前删除: git branch -D <name>
+参看远程仓库信息: git remote
+参看远程仓库的详细信息: git remote -v
+从远程服务器上拉取下来的代码，默认只有master分支，可以用git branch 参看，如果要使用远程一样的dev分支，那边就用用git checkout -b origin/dev
+将本地得dev分支和远程的dev分支关联起来: git branch --set-upstream dev origin/dev
+
+创建标签：将分支切换到要打分支那里，git tag v0.1
+参看所有标签: git tag
+对指定的那个commitid打上标签: git tag v0.1 "commit id"
+参看标签信息：git show <tagname>
+创建带有说明的标签:git tag -a v0.1 -m "version 0.1 released" "commit id"
+删除标签：git tag -d v0.1
+推送某个标签到远程:git push origin <tagname>
+删除远程的标签:先删除本地得tag，git tag -d v0.1 然后 git push origin: refs/tags/v0.1
