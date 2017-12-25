@@ -23,6 +23,8 @@ ssh:ssh-keygen -t rsa -C "youremail@example.com"
 创建+切换分支:git checkout -b <name>
 合并分支:git merge <name>,把指定分支合并到当前分支中,fast-forward
 删除分支：git branch -d <name>
+删除远程分支: git push origin --delete <branch name> or git push origin: <branch name 这是一个空的分支>,推送一个空的分支给远程
+参看分支详细信息: git branch -a 红色部分显示的是远程的分支信息，如果你的系统中支持了这个颜色显示的话
 参看分支合并图:git log --graph
 强制禁用fast-forward模式的话:git merge --no-ff -m "merge with on fast forward" <name>
 存储现场：git stash
@@ -41,4 +43,4 @@ ssh:ssh-keygen -t rsa -C "youremail@example.com"
 创建带有说明的标签:git tag -a v0.1 -m "version 0.1 released" "commit id"
 删除标签：git tag -d v0.1
 推送某个标签到远程:git push origin <tagname>
-删除远程的标签:先删除本地得tag，git tag -d v0.1 然后 git push origin: refs/tags/v0.1
+删除远程的标签:先删除本地得tag，git tag -d v0.1 然后 git push origin: refs/tags/v0.1 or　git push origin --delete tag <tagname>
