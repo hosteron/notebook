@@ -1,0 +1,74 @@
+normal模式:diff 的默认模式和--normal 一样
+context模式:上下文模式,diff -c 
+unified模式:统一，使一致模式, diff -u
+
+测试环境:
+1.txt 2.txt dir1/1.txt dir2/test1 dir2/1.txt dir2/test2
+1.txt:
+apples
+oranges
+kiwis
+carrots
+
+2.txt:
+apples
+kiwis
+carrots
+grapefruits
+
+dir1/test1,空的；dir2/test2,空的
+
+dir1/1.txt:
+apples
+oranges
+kiwis
+carrots
+
+dir2/1.txt
+apples
+kiwis
+carrots
+grapefruits
+
+normal:
+diff 1.txt 2.txt
+2d1
+< oranges
+4a4
+> grapefruits
+
+dif dir1 dir2
+diff dir1/1.txt dir2/1.txt
+2d1
+< oranges
+4a4
+> grapefruits
+Only in dir1/: test1
+Only in dir2/: test2
+
+context:
+diff 1.txt 2.txt -c 
+*** 1.txt	2017-12-25 11:38:35.214056076 +0800
+--- 2.txt	2017-12-25 11:39:38.469118986 +0800
+***************
+*** 1,4 ****
+  apples
+- oranges
+  kiwis
+  carrots
+--- 1,4 ----
+  apples
+  kiwis
+  carrots
++ grapefruits
+
+unified:
+diff 1.txt 2.txt -u
+--- 1.txt	2017-12-25 11:38:35.214056076 +0800
++++ 2.txt	2017-12-25 11:39:38.469118986 +0800
+@@ -1,4 +1,4 @@
+ apples
+-oranges
+ kiwis
+ carrots
++grapefruits
