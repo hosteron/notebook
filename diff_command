@@ -72,3 +72,7 @@ diff 1.txt 2.txt -u
  kiwis
  carrots
 +grapefruits
+////////////
+diff -r -q
+递归: -r 
+只显示不同的文件名称: -q
