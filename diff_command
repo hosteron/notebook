@@ -76,3 +76,6 @@ diff 1.txt 2.txt -u
 diff -r -q
 递归: -r 
 只显示不同的文件名称: -q
+
+/////
+在ubuntu系统中可以用meld工具来直接比较文本工具
