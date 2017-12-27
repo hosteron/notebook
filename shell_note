@@ -1,0 +1,24 @@
+0-/dev/stdin-标准输入 1-/dev/stdout-标准输出 2-/dev/stderr-标准错误
+shell脚本中的exec命令：
+exec后面跟着的是文件描述符的话先不谈
+exec后面跟着的是shell命令，此命令结束后，shell也结束了
+shell脚本中各种括号的用法:
+http://blog.csdn.net/taiyang1987912/article/details/39551385
+
+shell脚本中的find 命令的用法:
+http://man.linuxde.net/find
+例子：
+find . -maxdepth 1 -type d ! \( -name alsa -o -name terminfo -o -name . \)  -exec rm -fr {} \;
+-maxdepth:最大深度　1
+-type:搜索的文件类型　d　目录
+	f　普通文件
+	l　符号链接
+	d　目录
+	c　字符设备
+	b　块设备
+	s　嵌套字
+	p　Fifo
+!: 否定参数
+\( -name alsa -o -name terminfo -o -name . \):因为括号在ｓｈｅｌｌ脚本中有命令组的含义，需要转义，-o表示条件或
+-exec 根据搜索后的结果直接后面的命令
+rm -fr {}:这里的{}表示搜索出来的所有结果
