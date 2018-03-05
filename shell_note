@@ -44,3 +44,12 @@ $@变量会将命令行上提供的所有参数当作同意个字符串中的多
 xargs
 http://man.linuxde.net/xargs
 
+////
+&& -> command1&&command2&&command3,在前一个命令执行成功时，后面的命令才能正常执行
+|| -> command1||command2||command3,在前一个命令执行失败时，后面的命令才能正常执行
+() -> 括号中的命令用';'分割开,命令是在子shell中执行的，不会对当前的shell影响
+{} -> '{','}'和命令之间用用空格分割开，命令之间用';'分开，其中命令会对当前的shell影响
+
+////
+对于错误定位的一些方法的blog地址
+https://www.cnblogs.com/panfeng412/archive/2011/11/06/2237857.html
