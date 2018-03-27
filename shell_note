@@ -53,3 +53,12 @@ http://man.linuxde.net/xargs
 ////
 对于错误定位的一些方法的blog地址
 https://www.cnblogs.com/panfeng412/archive/2011/11/06/2237857.html
+///
+在linux的命令模式下使用ctrl组合键能让操作更便捷
+ctl+k--剪切光标以及后边的内容
+ctl+u--剪切关闭按之前的内容
+ctl+y--在光标处粘贴上两个命令得到的内容，粘贴方式和被借钱的方式相同
+ctl+l--清屏
+ctl+a--光标切换到开头
+ctl+e--光标切换个到结尾
+ctl+r--输入光剑自可掏出曾经使用过的命令
