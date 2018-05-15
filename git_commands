@@ -44,3 +44,5 @@ ssh:ssh-keygen -t rsa -C "youremail@example.com"
 删除标签：git tag -d v0.1
 推送某个标签到远程:git push origin <tagname>
 删除远程的标签:先删除本地得tag，git tag -d v0.1 然后 git push origin: refs/tags/v0.1 or　git push origin --delete tag <tagname>
+
+git commit --amend重新修复提交
